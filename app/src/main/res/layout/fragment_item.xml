@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_30">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/contact_info"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_fragment_item"/>
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.ItemFragment">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="@dimen/layout_width"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nameTextView"
+                android:layout_width="@dimen/layout_width_200"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_fragment_item"
+                app:layout_constraintBaseline_toBaselineOf="@+id/name"
+                app:layout_constraintStart_toEndOf="@+id/name"
+                tools:text="@string/name" />
+
+            <EditText
+                android:id="@+id/nameEditText"
+                android:layout_width="@dimen/layout_width_200"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_fragment_item"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@+id/name"
+                app:layout_constraintStart_toEndOf="@+id/name" />
+
+            <TextView
+                android:id="@+id/lastName"
+                android:layout_width="@dimen/layout_width"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30"
+                android:text="@string/last_name"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name" />
+
+            <TextView
+                android:id="@+id/lastNameTextView"
+                android:layout_width="@dimen/layout_width_200"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_fragment_item"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lastName"
+                app:layout_constraintStart_toEndOf="@+id/lastName"
+                tools:text="@string/last_name" />
+
+            <EditText
+                android:id="@+id/lastNameEditText"
+                android:layout_width="@dimen/layout_width_200"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_fragment_item"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lastName"
+                app:layout_constraintStart_toEndOf="@+id/lastName" />
+
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="@dimen/layout_width"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30"
+                android:text="@string/number"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lastName" />
+
+            <TextView
+                android:id="@+id/numberTextView"
+                android:layout_width="@dimen/layout_width_200"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_fragment_item"
+                app:layout_constraintBaseline_toBaselineOf="@+id/number"
+                app:layout_constraintStart_toEndOf="@+id/number"
+                tools:text="@string/number" />
+
+            <EditText
+                android:id="@+id/numberEditText"
+                android:layout_width="@dimen/layout_width_200"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_fragment_item"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@+id/number"
+                app:layout_constraintStart_toEndOf="@+id/number" />
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/numberTextView" />
+
+            <Button
+                android:id="@+id/changeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:text="@string/change"
+                android:layout_margin="@dimen/margin"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/okBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:text="@string/ok"
+                android:visibility="gone"
+                android:layout_margin="@dimen/margin"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">List Recycler Contact</string>
+    <string name="name">name</string>
+    <string name="last_name">LastName</string>
+    <string name="number">number</string>
+    <string name="contact_info">Contact info</string>
+    <string name="change">change</string>
+    <string name="ok">ok</string>
+    <string name="success">Success</string>
+    <string name="error">Error</string>
+    <string name="delete">delete</string>
+</resources>
+
