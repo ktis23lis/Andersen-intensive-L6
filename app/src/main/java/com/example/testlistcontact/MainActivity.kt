@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DiffUtil
 import com.example.testlistcontact.ui.ItemFragment
 import com.example.testlistcontact.ui.ListFragment
 
@@ -95,4 +96,5 @@ class MainActivity : AppCompatActivity(R.layout.activity_main), ListFragment.Ite
             commit()
         }
     }
+
 }

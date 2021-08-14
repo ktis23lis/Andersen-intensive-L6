@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
 class Adapter(
@@ -16,7 +17,7 @@ class Adapter(
 
     private var menuPosition: Int = 0
 
-    var contactList = emptyList<PersonContact>()
+    var contactList = arrayListOf<PersonContact>()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -48,10 +49,12 @@ class Adapter(
         return menuPosition
     }
 
-    fun filterList(list: ArrayList<PersonContact>) {
-        contactList = list
-        notifyDataSetChanged()
-    }
+fun setDate (newP : ArrayList<PersonContact>){
+    val difItil = PersonContactDiff(contactList, newP)
+    val difRes = DiffUtil.calculateDiff(difItil)
+    contactList = newP
+    difRes.dispatchUpdatesTo(this)
+}
 
     inner class ContactViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val lastNameTextView: TextView = itemView.findViewById(R.id.lastNameItemTextView)
@@ -69,5 +72,22 @@ class Adapter(
             }
             fragment.registerForContextMenu(itemView)
         }
+    }
+    class PersonContactDiff(
+            private var oldList: List<PersonContact>,
+            private var newList: List<PersonContact>): DiffUtil.Callback() {
+
+        override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+            return oldList[oldItemPosition].lastName == newList[newItemPosition].lastName &&
+                    oldList[oldItemPosition].name == newList[newItemPosition].name
+        }
+
+        override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+            return oldList[oldItemPosition] == newList[newItemPosition]
+        }
+
+        override fun getNewListSize(): Int = newList.size
+
+        override fun getOldListSize(): Int = oldList.size
     }
 }
