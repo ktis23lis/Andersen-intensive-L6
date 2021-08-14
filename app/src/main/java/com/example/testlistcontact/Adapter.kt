@@ -73,7 +73,6 @@ fun setDate (newP : ArrayList<PersonContact>){
             fragment.registerForContextMenu(itemView)
         }
     }
-
     class PersonContactDiff(
             private var oldList: List<PersonContact>,
             private var newList: List<PersonContact>): DiffUtil.Callback() {
