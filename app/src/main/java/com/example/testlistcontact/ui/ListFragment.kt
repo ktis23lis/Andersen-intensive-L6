@@ -63,6 +63,8 @@ class ListFragment : Fragment(R.layout.fragment_list_contact) {
         recyclerView.adapter = adapter
         adapter.contactList = contactList
 
+
+
         val decorator = DividerItemDecoration(context, LinearLayoutManager.VERTICAL)
         decorator.setDrawable(resources.getDrawable(R.drawable.separator, null))
         recyclerView.addItemDecoration(decorator)
@@ -102,7 +104,7 @@ class ListFragment : Fragment(R.layout.fragment_list_contact) {
                 filterList.add(i)
             }
         }
-        adapter.filterList(filterList)
+        adapter.setDate(filterList)
     }
 
     override fun onCreateContextMenu(
